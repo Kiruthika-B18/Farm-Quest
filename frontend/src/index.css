@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #2d9e5f;
+  --color-brand-light: #4eca84;
+  --color-brand-dark: #1a6b3f;
+  --color-gold: #f5c842;
+  --color-earth: #8b5e3c;
+  --color-bg-mint: #f0f7f2;
+  --color-card-border: #c8e6c9;
+
+  --animate-count-up: countUp 1s ease-out forwards;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-bg-mint);
+    color: #333333;
+    font-family: 'Nunito', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    max-width: 430px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 70px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-brand text-white font-bold py-3 px-6 rounded-2xl w-full transition-transform active:scale-95 shadow-sm;
+  }
+  .card {
+    @apply bg-white border border-card-border rounded-2xl p-4;
+    box-shadow: 0 4px 8px rgba(45, 158, 95, 0.08);
+  }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
